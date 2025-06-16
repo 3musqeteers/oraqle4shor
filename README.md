@@ -1,6 +1,6 @@
 # oraqle4shor
 
-This notebook includes a function called modular_multiplier that receives as its input two positive integers a and N with a < N. The function returns a controlled QuantumGate that computes |ay mod N> for a given input |y>.
+This notebook includes a function called modular_multiplier that receives as its input two positive integers $a$ and $N$ with $a < N$. The function returns a controlled QuantumGate that computes $\ket{ay \mod N}$ for a given input $\ket{y}$.
 
 ### Usage:
 
@@ -26,12 +26,12 @@ max(state_probabilities_dict, key=state_probabilities_dict.get)
 ### Gate input
 
 * First qubit: Control
-* Next ceil(log2(N)) qubits: |y>
-* Next ceil(log2(N))+2 qubits: |0> - used for internal computation
+* Next $\left\lceil\log_2(N)\right\rceil$ qubits: $\ket{y}$
+* Next $\left\lceil\log_2(N)\right\rceil+2$ qubits: $\ket{0}$ - used for internal computation
 
 ### Remarks
 
-If a and N are coprime then we reset the utility ceil(log2(N)) qubits to zero using a clever trick. Otherwise we can not apply this clever trick because a does not have an inverse modulo N.
+If a and N are coprime then we reset the utility $\left\lceil\log_2(N)\right\rceil$ qubits to zero using a clever trick. Otherwise we can not apply this clever trick because a does not have an inverse modulo N.
 
 ### Reference
 
