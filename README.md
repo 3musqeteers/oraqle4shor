@@ -20,7 +20,8 @@ circuit.draw()
  
 state = Statevector.from_instruction(circuit)
 state_probabilities_dict = state.probabilities_dict()
-max(state_probabilities_dict, key=state_probabilities_dict.get)
+max_probability_argument = max(state_probabilities_dict, key=state_probabilities_dict.get)
+int(max_probability_argument[::-1][1:ceil(log2(5))+1], 2)
 ```
 
 ### Gate input
