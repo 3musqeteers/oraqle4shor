@@ -5,8 +5,8 @@ This notebook includes a function called modular_multiplier that receives as its
 ### Usage:
 
 ```python
-# Computing 3 times 4 modulo 5
-multiplier = modular_multiplier(a=3, N=5)
+# Computing 3 times 12 modulo 15
+multiplier = modular_multiplier(a=3, N=15)
 num_total_qubits = multiplier.num_qubits
 circuit = QuantumCircuit(num_total_qubits)
 
@@ -14,6 +14,7 @@ circuit = QuantumCircuit(num_total_qubits)
 circuit.x(0)
 ## set y to 4
 circuit.x(3) # y = 4
+circuit.x(4) # y = 12
 
 circuit.append(multiplier, range(num_total_qubits))
 circuit.draw()
@@ -21,7 +22,7 @@ circuit.draw()
 state = Statevector.from_instruction(circuit)
 state_probabilities_dict = state.probabilities_dict()
 max_probability_argument = max(state_probabilities_dict, key=state_probabilities_dict.get)
-int(max_probability_argument[::-1][1:ceil(log2(5))+1], 2)
+int(max_probability_argument[-1-ceil(log2(15)):-1], 2)
 ```
 
 ### Gate input
